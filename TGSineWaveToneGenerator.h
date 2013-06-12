@@ -5,6 +5,15 @@
 //  Created by Anthony Picciano on 6/12/13.
 //  Copyright (c) 2013 Anthony Picciano. All rights reserved.
 //
+//  Based upon work by Matt Gallagher on 2010/10/20.
+//  Copyright 2010 Matt Gallagher. All rights reserved.
+//
+//  Permission is given to use this source code file, free of charge, in any
+//  project, commercial or otherwise, entirely at your risk, with the condition
+//  that any redistribution (in part or whole) of source code must retain
+//  this copyright and permission notice. Attribution in compiled projects is
+//  appreciated but not required.
+//
 
 #import <Foundation/Foundation.h>
 #import <AudioUnit/AudioUnit.h>
