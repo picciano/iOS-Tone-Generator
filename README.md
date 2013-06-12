@@ -3,7 +3,7 @@ iOS-Tone-Generator
 
 Tone Generator for iOS
 
-A reusable Tone Generator class based upon the fine work of Matt Galagher, http://www.cocoawithlove.com/2010/10/ios-tone-generator-introduction-to.html
+A reusable Tone Generator class roughly based upon the fine work of Matt Galagher, http://www.cocoawithlove.com/2010/10/ios-tone-generator-introduction-to.html
 
 
 
