@@ -16,7 +16,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AudioUnit/AudioUnit.h>
+@import AudioToolbox;
+@import AVFoundation;
+
 
 #define SINE_WAVE_TONE_GENERATOR_FREQUENCY_DEFAULT 440.0f
 
@@ -28,19 +30,23 @@
 #define SINE_WAVE_TONE_GENERATOR_AMPLITUDE_FULL 0.25f
 #define SINE_WAVE_TONE_GENERATOR_AMPLITUDE_DEFAULT SINE_WAVE_TONE_GENERATOR_AMPLITUDE_MEDIUM
 
-@interface TGSineWaveToneGenerator : NSObject
-{
-    AudioComponentInstance toneUnit;
-    
-@public
+typedef struct {
     double frequency;
     double amplitude;
-    double sampleRate;
     double theta;
+} TGChannelInfo;
+
+@interface TGSineWaveToneGenerator : NSObject {
+    @public
+    AudioComponentInstance _toneUnit;
+    double _sampleRate;
+    TGChannelInfo *_channels;
+    UInt32 _numChannels;
 }
 
+- (id)initWithChannels:(UInt32)size;
 - (id)initWithFrequency:(double)hertz amplitude:(double)volume;
-- (void)playForDuration:(float)time;
+- (void)playForDuration:(NSTimeInterval)time;
 - (void)play;
 - (void)stop;
 
