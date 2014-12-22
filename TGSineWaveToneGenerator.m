@@ -32,15 +32,12 @@ OSStatus RenderTone(
 	TGSineWaveToneGenerator *toneGenerator = (__bridge TGSineWaveToneGenerator *)inRefCon;
     assert(ioData->mNumberBuffers == toneGenerator->_numChannels);
     
-    for (size_t i = 0; i < toneGenerator->_numChannels; i++) {
-        double theta = toneGenerator->_channels[i].theta;
-        double amplitude = toneGenerator->_channels[i].amplitude;
-        double theta_increment = 2.0 * M_PI * toneGenerator->_channels[i].frequency / toneGenerator->_sampleRate;
+    for (size_t chan = 0; chan < toneGenerator->_numChannels; chan++) {
+        double theta = toneGenerator->_channels[chan].theta;
+        double amplitude = toneGenerator->_channels[chan].amplitude;
+        double theta_increment = 2.0 * M_PI * toneGenerator->_channels[chan].frequency / toneGenerator->_sampleRate;
         
-        // This is a mono tone generator so we only need the first buffer
-        const int channel = i;
-        Float32 *buffer = (Float32 *)ioData->mBuffers[channel].mData;
-        
+        Float32 *buffer = (Float32 *)ioData->mBuffers[chan].mData;
         // Generate the samples
         for (UInt32 frame = 0; frame < inNumberFrames; frame++) {
             buffer[frame] = sin(theta) * amplitude;
@@ -53,10 +50,8 @@ OSStatus RenderTone(
         }
         
         // Store the theta back in the view controller
-        toneGenerator->_channels[i].theta = theta;
+        toneGenerator->_channels[chan].theta = theta;
     }
-    
-	
     
 	return noErr;
 }
