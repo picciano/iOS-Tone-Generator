@@ -13,7 +13,7 @@ A reusable class for generating simple sine waveform audio tones with specified 
 ### Multiple Channels
 
 You can add more than one tone channel, for example to generate [DTMF](http://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling)
-tones. These are the tones you may hear when dialing on a keypad (either ananlog or even on iOS in the Telephone.app)
+tones. These are the tones you may hear when dialing on a keypad (either analog or even on iOS in the Telephone.app)
 
 ![DTMF Keypad](http://upload.wikimedia.org/wikipedia/commons/0/03/Phone_keypad_layout_color.png)
 
