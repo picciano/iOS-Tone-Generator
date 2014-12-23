@@ -5,6 +5,8 @@
 //  Created by Anthony Picciano on 6/12/13.
 //  Copyright (c) 2013 Anthony Picciano. All rights reserved.
 //
+//  Major contributions and updates by Simon Grätzer on 12/23/14.
+//
 //  Based upon work by Matt Gallagher on 2010/10/20.
 //  Copyright 2010 Matt Gallagher. All rights reserved.
 //
