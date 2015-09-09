@@ -107,6 +107,7 @@ OSStatus RenderTone(
 }
 
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     if (_channels != NULL) {
         free(_channels);
     }
